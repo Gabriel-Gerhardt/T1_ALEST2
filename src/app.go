@@ -8,24 +8,24 @@ import (
 )
 
 func main() {
-	file, err := os.Open("Casos de Teste-20250415/caso_102.txt")
+	file, err := os.Open("Casos de Teste-20250415/caso_192.txt")
 	if err != nil {
 		panic(err)
 	}
 	scanner := bufio.NewScanner(file)
 	count := 1
-	var array []int
+	//var array []int
 	var model2 []string
 	var model []int
 	for scanner.Scan() {
 
 		line := scanner.Text()
 		if count == 1 {
-			arrayValue, err := strconv.Atoi(line)
+			//arrayValue, err := strconv.Atoi(line)
 			if err != nil {
 				panic(err)
 			}
-			array = fillArray(arrayValue)
+			//array = fillArray(arrayValue)
 		}
 		if count == 2 {
 			model2 = strings.Split(line, " ")
@@ -42,6 +42,6 @@ func main() {
 		count++
 
 	}
-	robotDance(array, model)
-	//robotDanceMMC(model)
+	//robotDance(array, model)
+	robotDanceMMC(model)
 }

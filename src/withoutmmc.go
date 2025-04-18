@@ -5,7 +5,7 @@ import (
 	"slices"
 )
 
-func robotDance(arr []int, mod []int) {
+func robotDance(arr []int, mod []int) int {
 	cont := 0
 	newArr := make([]int, len(arr))
 	copy(newArr, arr)
@@ -13,12 +13,12 @@ func robotDance(arr []int, mod []int) {
 		tempArr := make([]int, len(mod))
 		for i := range mod {
 			if mod[i] < 0 || mod[i] >= len(newArr) {
-				return
+				return 0
 			}
 			tempArr[i] = newArr[mod[i]]
 		}
-		if cont%100000 == 0 {
-			fmt.Println(cont)
+		if cont%100000 == 0 && cont != 0 {
+			//	fmt.Println(cont)
 		}
 		cont++
 
@@ -29,6 +29,7 @@ func robotDance(arr []int, mod []int) {
 
 	}
 	fmt.Printf("(NoMMC)The loop interates %v\n", cont)
+	return cont
 }
 
 func fillArray(x int) []int {

@@ -5,20 +5,17 @@ import (
 	"slices"
 )
 
-func robotDance(arr []int, mod []int) int {
+func robotDance(arr []*int, mod []*int) int {
 	cont := 0
-	newArr := make([]int, len(arr))
+	newArr := make([]*int, len(arr))
 	copy(newArr, arr)
 	for {
-		tempArr := make([]int, len(mod))
+		tempArr := make([]*int, len(mod))
 		for i := range mod {
-			if mod[i] < 0 || mod[i] >= len(newArr) {
+			if *mod[i] < 0 || *mod[i] >= len(newArr) {
 				return 0
 			}
-			tempArr[i] = newArr[mod[i]]
-		}
-		if cont%100000 == 0 && cont != 0 {
-			//	fmt.Println(cont)
+			tempArr[i] = newArr[*mod[i]]
 		}
 		cont++
 
@@ -32,11 +29,12 @@ func robotDance(arr []int, mod []int) int {
 	return cont
 }
 
-func fillArray(x int) []int {
-
-	array := make([]int, x)
-	for i := range array {
-		array[i] = i
+func fillArray(x int) []*int {
+	array := make([]*int, x)
+	for i := 0; i < x; i++ {
+		value := new(int)
+		*value = i
+		array[i] = value
 	}
 	return array
 }

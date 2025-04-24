@@ -11,7 +11,7 @@ import (
 )
 
 func TestMMC(t *testing.T) {
-	file, err := os.Open("Casos de Teste-20250415/caso_102.txt")
+	file, err := os.Open("Casos de Teste-20250415/caso_72.txt")
 	if err != nil {
 		panic(err)
 	}
@@ -53,7 +53,7 @@ func TestMMC(t *testing.T) {
 
 }
 func TestRobot(t *testing.T) {
-	file, err := os.Open("Casos de Teste-20250415/caso_102.txt")
+	file, err := os.Open("Casos de Teste-20250415/caso_72.txt")
 	if err != nil {
 		panic(err)
 	}
